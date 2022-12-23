@@ -1,0 +1,5 @@
+#!/bin/bash
+[ -z "$1" ] && echo "Please specify a CLI command (ex. ls)" && exit
+SCRIPT_DIR=$(dirname -- "$0")
+# -T: Disable pseudo-tty allocation
+${SCRIPT_DIR}/docker-compose exec -T phpfpm "$@"

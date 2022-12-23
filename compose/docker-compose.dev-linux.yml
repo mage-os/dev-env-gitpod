@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  app:
+    volumes: &appvolumes
+      - ${GITPOD_REPO_ROOT}:/var/www/html:cached
+
+  phpfpm:
+    volumes: *appvolumes
